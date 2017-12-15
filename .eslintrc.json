@@ -5,10 +5,6 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "globals": {
-    "expect": false,
-    "it": false
-  },
   "env": {
     "node": true,
     "es6": true

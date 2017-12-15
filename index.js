@@ -37,15 +37,20 @@ module.exports = function () {
 
     function evaluateDefined(definedName, condition) {
       if (!isDefined(definedName)) return;
+
       if (defined[definedName] === condition) {
-        path.remove();
+        replace(path.get("alternate"));
       } else {
-        replace();
+        replace(path.get("consequent"));
       }
     }
 
-    function replace() {
-      const {node} = path.get("consequent");
+    function replace({node} = {}) {
+      if (!node) {
+        path.remove();
+        return;
+      }
+
       if (node.type === "BlockStatement") {
         path.replaceWithMultiple(node.body);
       } else {
