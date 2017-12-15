@@ -1,5 +1,6 @@
 vanilla-shake
 =============
+[![Build Status](https://travis-ci.org/ExpressenAB/babel-plugin-vanilla-shake.svg?branch=master)](https://travis-ci.org/ExpressenAB/babel-plugin-vanilla-shake)
 
 vanilla conditional compile plugin for babel.
 
