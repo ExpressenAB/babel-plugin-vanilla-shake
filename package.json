@@ -1,19 +1,43 @@
 {
   "name": "babel-plugin-vanilla-shake",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vanilla conditional compile plugin",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha && eslint . --cache"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "author": "AB Kvällstidningen Expressen",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ExpressenAB/babel-plugin-vanilla-shake.git"
+  },
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "keywords": [
+    "babel",
+    "plugin",
+    "conditional",
+    "compile"
+  ],
+  "license": "BSD-3-Clause",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "eslint": "^4.13.1",
     "mocha": "^4.0.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ExpressenAB/babel-plugin-vanilla-shake/issues"
+  },
+  "homepage": "https://github.com/ExpressenAB/babel-plugin-vanilla-shake#readme",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
 }

@@ -1,14 +1,15 @@
 "use strict";
 
-module.exports = function () {
-  let defined;
+module.exports = function vanillaShake() {
+  let defined, definedKeys;
 
-  const isDefined = (name) => Object.keys(defined || {}).includes(name);
+  const isDefined = (name) => definedKeys.includes(name);
 
   return {
     visitor: {
       Program(path, PluginPass) {
         defined = PluginPass.opts.defined;
+        definedKeys = Object.keys(defined || {});
       },
       Conditional: {
         exit
