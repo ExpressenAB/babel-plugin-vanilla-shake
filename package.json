@@ -26,7 +26,7 @@
   ],
   "license": "BSD-3-Clause",
   "peerDependencies": {
-    "babel-core": "6.x",
+    "babel-core": "6.x"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
