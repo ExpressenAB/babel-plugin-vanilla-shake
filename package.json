@@ -25,6 +25,9 @@
     "compile"
   ],
   "license": "BSD-3-Clause",
+  "peerDependencies": {
+    "babel-core": "6.x",
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
