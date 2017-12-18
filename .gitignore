@@ -32,5 +32,3 @@ config/_revision
 # Atom CTAGS
 .tags
 
-# Built service worker
-/worker.js
