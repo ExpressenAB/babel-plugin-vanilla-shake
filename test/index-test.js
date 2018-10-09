@@ -1,12 +1,12 @@
 "use strict";
 
-const babel = require("babel-core");
+const babel = require("@babel/core");
 const plugin = require("../");
 const {expect} = require("chai");
 
 const defaultOpts = {
   presets: [
-    ["env", {
+    ["@babel/env", {
       "modules": false,
       "targets": {
         "browsers": [
@@ -26,7 +26,7 @@ describe("vanilla-shake", () => {
       if (SHOULD_KEEP) console.log(foo);
     `;
 
-    const expected = "\nvar foo = 1;\nif (SHOULD_KEEP) console.log(foo);";
+    const expected = "var foo = 1;\nif (SHOULD_KEEP) console.log(foo);";
 
     const {code} = babel.transform(example, Object.assign({plugins: [plugin]}, defaultOpts));
     expect(code).to.equal(expected);
@@ -38,7 +38,7 @@ describe("vanilla-shake", () => {
     if (SHOULD_KEEP) console.log(foo);
     `;
 
-    const expected = "\nvar foo = 1;";
+    const expected = "var foo = 1;";
 
     const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: false}}]]}, defaultOpts));
     expect(code).to.equal(expected);
@@ -50,7 +50,7 @@ describe("vanilla-shake", () => {
     if (SHOULD_KEEP) console.log(foo);
     `;
 
-    const expected = "\nvar foo = 1;\nconsole.log(foo);";
+    const expected = "var foo = 1;\nconsole.log(foo);";
 
     const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: true}}]]}, defaultOpts));
     expect(code).to.equal(expected);
@@ -65,7 +65,7 @@ describe("vanilla-shake", () => {
     }
     `;
 
-    const expected = "\nvar foo = 1;";
+    const expected = "var foo = 1;";
 
     const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: false}}]]}, defaultOpts));
     expect(code).to.equal(expected);
@@ -88,13 +88,11 @@ describe("vanilla-shake", () => {
     }
     `;
 
-    const expected = "\n" +
+    const expected = "" +
       "var foo = 1;\n" +
-      "\n" +
       "var bar = 1;\n" +
       "console.log(foo);\n" +
       "console.log(bar);\n" +
-      "\n" +
       "var _bar = 2;\n" +
       "console.log(foo);\n" +
       "console.log(_bar);";
@@ -112,7 +110,7 @@ describe("vanilla-shake", () => {
     }
     `;
 
-    const expected = "\nvar foo = 1;";
+    const expected = "var foo = 1;";
 
     const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: true}}]]}, defaultOpts));
     expect(code).to.equal(expected);
@@ -130,10 +128,9 @@ describe("vanilla-shake", () => {
       }
       `;
 
-      const expected = "\n" +
+      const expected = "" +
       "var foo = 1;\n" +
       "var bar = 2;\n" +
-      "\n" +
       "console.log(bar);";
 
       const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: false}}]]}, defaultOpts));
@@ -151,10 +148,9 @@ describe("vanilla-shake", () => {
       }
       `;
 
-      const expected = "\n" +
+      const expected = "" +
       "var foo = 1;\n" +
       "var bar = 2;\n" +
-      "\n" +
       "console.log(foo);";
 
       const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: true}}]]}, defaultOpts));
@@ -175,10 +171,9 @@ describe("vanilla-shake", () => {
       }
       `;
 
-      const expected = "\n" +
+      const expected = "" +
       "var foo = 1;\n" +
       "var bar = 2;\n" +
-      "\n" +
       "console.log(foo);";
 
       const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: true, SHOULD_KEEP_INNER: false}}]]}, defaultOpts));
@@ -197,7 +192,7 @@ describe("vanilla-shake", () => {
       }
       `;
 
-      const expected = "\n" +
+      const expected = "" +
       "var foo = 1;\n" +
       "var bar = 2;";
 
@@ -220,10 +215,9 @@ describe("vanilla-shake", () => {
       }
       `;
 
-      const expected = "\n" +
+      const expected = "" +
       "var foo = 1;\n" +
       "var bar = 2;\n" +
-      "\n" +
       "console.log(bar);";
 
       const {code} = babel.transform(example, Object.assign({plugins: [[plugin, {defined: {SHOULD_KEEP: false, SHOULD_KEEP_2: true }}]]}, defaultOpts));
