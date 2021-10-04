@@ -1,6 +1,6 @@
 vanilla-shake
 =============
-[![Built latest](https://github.com/ExpressenAB/babel-plugin-vanilla-shake/actions/workflows/build-latest.yaml/badge.svg)](https://github.com/ExpressenAB/babel-plugin-vanilla-shake/actions/workflows/build-latest.yaml)
+[![Built latest](https://github.com/ExpressenAB/babel-plugin-vanilla-shake/actions/workflows/build-latest.yaml/badge.svg?event=push)](https://github.com/ExpressenAB/babel-plugin-vanilla-shake/actions/workflows/build-latest.yaml)
 
 vanilla conditional compile plugin for babel.
 
