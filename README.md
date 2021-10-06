@@ -1,6 +1,6 @@
 vanilla-shake
 =============
-[![Build Status](https://travis-ci.org/ExpressenAB/babel-plugin-vanilla-shake.svg?branch=master)](https://travis-ci.org/ExpressenAB/babel-plugin-vanilla-shake)[![dependencies Status](https://david-dm.org/ExpressenAB/babel-plugin-vanilla-shake/status.svg)](https://david-dm.org/ExpressenAB/babel-plugin-vanilla-shake)[![peerDependencies Status](https://david-dm.org/ExpressenAB/babel-plugin-vanilla-shake/peer-status.svg)](https://david-dm.org/ExpressenAB/babel-plugin-vanilla-shake?type=peer)
+[![Build status](https://github.com/ExpressenAB/babel-plugin-vanilla-shake/actions/workflows/build.yaml/badge.svg?event=push)](https://github.com/ExpressenAB/babel-plugin-vanilla-shake/actions/workflows/build.yaml)
 
 vanilla conditional compile plugin for babel.
 
