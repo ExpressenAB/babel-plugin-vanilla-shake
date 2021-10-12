@@ -9,14 +9,16 @@
   "engines": {
     "node": ">=8.9.0"
   },
-  "author": "AB Kvällstidningen Expressen",
+  "author": {
+    "name": "Bonnier News",
+    "url": "https://github.com/BonnierNews"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/ExpressenAB/babel-plugin-vanilla-shake.git"
   },
   "files": [
-    "index.js",
-    "LICENSE"
+    "index.js"
   ],
   "keywords": [
     "babel",
@@ -32,7 +34,7 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "chai": "^4.3.4",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.0",
     "mocha": "^9.1.2"
   },
   "bugs": {
@@ -41,6 +43,5 @@
   "homepage": "https://github.com/ExpressenAB/babel-plugin-vanilla-shake#readme",
   "directories": {
     "test": "test"
-  },
-  "dependencies": {}
+  }
 }
