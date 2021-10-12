@@ -32,3 +32,6 @@ config/_revision
 # Atom CTAGS
 .tags
 
+tmp/
+*.log
+package-lock.json
